@@ -3,7 +3,7 @@
 pipeline {
     agent {
         node {
-            label "WS186"
+            label "ws186"
         }
     }
 
@@ -25,7 +25,7 @@ pipeline {
             parallel {
                 stage('Branch A') {
                     agent {
-                        label "WS186"
+                        label "ws186"
                     }
                     steps {
                         echo "On Branch A"
