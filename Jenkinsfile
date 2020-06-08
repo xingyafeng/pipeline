@@ -1,4 +1,7 @@
 #!/usr/bin/env groovy
+@Library('jenkinslibrary@master') _
+
+def tools = new org.devops.tools()
 
 pipeline {
     agent {
@@ -46,6 +49,7 @@ pipeline {
                         sh 'sleep 5'
                         sh 'touch branch_b'
                         script {
+                            tools.PrintMes("测试 Share lib 成功","green")
                             def browsers = ['chrome', 'firefox']
                             for (int i = 0; i < browsers.size(); ++i) {
                                 echo "Testing the ${browsers[i]} browser"
