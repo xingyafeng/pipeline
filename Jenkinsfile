@@ -4,6 +4,7 @@ pipeline {
     agent {
         node {
             label "ws186"
+            customWorkspace '/home/yafeng/jobs'
         }
     }
 
