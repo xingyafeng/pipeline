@@ -2,6 +2,7 @@
 @Library('jenkinslibrary@master') _
 
 def tools = new org.devops.tools()
+def toemail = new org.devops.toemail()
 
 pipeline {
     agent {
@@ -49,7 +50,9 @@ pipeline {
                         sh 'sleep 5'
                         sh 'touch branch_b'
                         script {
+                            userEmail = "514779897@qq.com"
                             tools.PrintMes("测试 Share lib 成功","green")
+                            toemail.Email("代码质量阈错误！请及时修复！",userEmail)
                             def browsers = ['chrome', 'firefox']
                             for (int i = 0; i < browsers.size(); ++i) {
                                 echo "Testing the ${browsers[i]} browser"
