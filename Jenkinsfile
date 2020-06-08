@@ -4,7 +4,7 @@ pipeline {
     agent {
         node {
             label "ws186"
-            customWorkspace '/home/yafeng/jobs'
+            customWorkspace "/home/yafeng/jobs/${JOB_NAME}"
         }
     }
 
@@ -38,9 +38,9 @@ pipeline {
                     }
                 }
                 stage('Branch B') {
-                    agent {
-                        label "10.129.46.20"
-                    }
+                    // agent {
+                    //     label "10.129.46.20"
+                    // }
                     steps {
                         echo "On Branch B"
                         sh 'sleep 5'
