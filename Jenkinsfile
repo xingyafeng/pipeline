@@ -25,9 +25,9 @@ pipeline {
             failFast true
             parallel {
                 stage('Branch A') {
-                    agent {
-                        label "ws186"
-                    }
+//                    agent {
+//                        label "ws186"
+//                    }
                     steps {
                         echo "On Branch A"
                         echo "Hello, ${CC}, nice to meet you."
