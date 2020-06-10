@@ -7,7 +7,8 @@
 
 def tools = new org.devops.tools()
 def toemail = new org.devops.toemail()
-def d = new org.devops.Dog("hahahahaha")
+def d   = new org.devops.Dog("dahuang")
+def cat = new org.devops.Cat("mimi")
 
 pipeline {
     agent {
@@ -60,8 +61,19 @@ pipeline {
                         // sh 'touch branch_b'
 
                         script {
-                            log.info 'Starting'
-                            log.cmd  '测试是否成功？'
+                            println(currentBuild.displayName)
+                            println(currentBuild)
+
+                            cat.run()
+
+                            utils.print_env()
+
+                            log.v('测试log输出功能')
+                            log.d('测试log输出功能')
+                            log.i('测试log输出功能')
+                            log.w('测试log输出功能')
+                            log.e('测试log输出功能')
+
                             d.init()
                             d.setName("小黄")
                             println(d.getName())
