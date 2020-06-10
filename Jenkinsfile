@@ -7,8 +7,9 @@
 
 def tools = new org.devops.tools()
 def toemail = new org.devops.toemail()
-def d   = new org.devops.Dog("dahuang")
+def d   = new org.devops.Dog("dahuang", log, utils)
 def cat = new org.devops.Cat("mimi")
+def tt = new org.devops.tcl.test(log, utils)
 
 pipeline {
     agent {
@@ -63,6 +64,9 @@ pipeline {
                         script {
                             println(currentBuild.displayName)
                             println(currentBuild)
+                            tools.cmd("test sh func ...")
+
+                            tt.init()
 
                             cat.run()
 
