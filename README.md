@@ -1,2 +1,2 @@
 # pipeline
-Test jenkins pipeline func.
+测试Jenkinsfile的使用。
